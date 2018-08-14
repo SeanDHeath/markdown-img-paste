@@ -109,13 +109,13 @@ module.exports =
           else if (fileFormat == "rst")
             text += ".. figure:: "
             text += join(subFolderToUse, filename) + '\r\n'
-            text += "\t :alt: " + words
+            text += "\t:alt: " + words
           # We need this emmptyline so that the following line is separated
           text += "\r\n"
           #Creates the actual image on the fileSystem
-          fs.writeFileSync fullname, img.toPng()
+          fs.writeFileSync(fullname, img.toPng())
           # Writes the actual link into the editor
-          paste_text cursor, text
+          paste_text( cursor, text)
         # only prints out an error on the console and restores the original text in the line
         catch error
           console.log("Error" + error)
