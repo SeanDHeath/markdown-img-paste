@@ -32,8 +32,8 @@ module.exports =
           if !grammar = cursor.getGrammar() then return
           if cursor.getPath()
               # We are in a markdown file
-              if  cursor.getPath().substr(-3) == '.md' or
-                  cursor.getPath().substr(-9) == '.markdown' and
+              if  (cursor.getPath().substr(-3) == '.md' or
+                  cursor.getPath().substr(-9) == '.markdown') and
                   grammar.scopeName != 'source.gfm'
                       fileFormat = "md"
               # We are in a RST file
